@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-fraunces: "Fraunces", Georgia, serif;
+    --font-inter: "Inter", system-ui, sans-serif;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #FBF8F1;
+    color: #1C1814;
+    font-family: var(--font-inter);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background-color: #8B6F47;
+    color: #FBF8F1;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-fraunces);
+  }
+
+  /* Editorial headline styling — Fraunces with high softness + optical size */
+  .headline-display {
+    font-family: var(--font-fraunces);
+    font-weight: 400;
+    font-variation-settings: "SOFT" 100, "opsz" 144;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  .headline-section {
+    font-family: var(--font-fraunces);
+    font-weight: 400;
+    font-variation-settings: "SOFT" 100, "opsz" 144;
+    letter-spacing: -0.025em;
+    line-height: 1.0;
+  }
+
+  .headline-sub {
+    font-family: var(--font-fraunces);
+    font-weight: 500;
+    font-variation-settings: "SOFT" 100, "opsz" 96;
+    letter-spacing: -0.015em;
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid #8B6F47;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Reduce motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
